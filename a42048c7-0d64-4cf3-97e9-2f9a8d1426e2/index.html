@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>玉缘世家翡翠 | 传承东方之美</title>
+    <title>Tomde.cloud翡翠网站模板</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -14,6 +14,8 @@
             --card-bg: #ffffff;
             --transition: all 0.3s ease;
             --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --max-width: 1200px;
+            --bg-style: linear-gradient(135deg, rgba(10, 95, 56, 0.8), rgba(212, 175, 55, 0.6)), url('https://cdn.jsdelivr.net/gh/tomdehub/resources/img/site/2025-08/15-30-38_1755329438574_bg.jpg') center/cover no-repeat;
         }
 
         .dark-mode {
@@ -41,9 +43,8 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 20px;
         }
 
         /* 顶部区域 */
@@ -58,8 +59,8 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 600;
             color: var(--primary-color);
         }
 
@@ -134,7 +135,7 @@
         .hero {
             position: relative;
             height: 80vh;
-            background: linear-gradient(135deg, rgba(10, 95, 56, 0.8), rgba(212, 175, 55, 0.6)), url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            background: var(--bg-style);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -301,7 +302,7 @@
         .about-image {
             height: 400px;
             border-radius: 10px;
-            background: url('https://cdn.jsdelivr.net/gh/tomdehub/resources/img/site/2025-08/04-02-03_1755288123888_微信图片_20250816040116.jpg') center/cover;
+            background: url('https://cdn.jsdelivr.net/gh/tomdehub/resources/img/site/2025-08/15-23-11_1755328991015_20250816040116.jpg') center/cover;
         }
 
         .about-content h2 {
@@ -316,11 +317,14 @@
 
         /* 底部区域 */
         .footer {
-            background-color: var(--primary-color);
             color: white;
-            padding: 40px 0;
             text-align: center;
+        }
+
+        .footer-container {
             border-radius: 15px 15px 0 0;
+            padding: 40px 0;
+            background: var(--bg-style);
         }
 
         .contact-info {
@@ -389,15 +393,15 @@
             .hero h1 {
                 font-size: 2.8rem;
             }
-            
+
             .hero p {
                 font-size: 1.2rem;
             }
-            
+
             .about {
                 grid-template-columns: 1fr;
             }
-            
+
             .about-image {
                 height: 300px;
             }
@@ -407,31 +411,31 @@
             .hero {
                 height: 70vh;
             }
-            
+
             .hero h1 {
                 font-size: 2.3rem;
             }
-            
+
             .section-title {
                 font-size: 1.8rem;
             }
         }
 
         @media (max-width: 576px) {
-            
+
             .hero {
                 height: 60vh;
                 margin-bottom: 40px;
             }
-            
+
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             .hero p {
                 font-size: 1rem;
             }
-            
+
             .btn {
                 padding: 10px 25px;
             }
@@ -439,208 +443,210 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- 顶部栏 -->
-        <div class="top-bar">
-            <div class="logo">
-                <i class="fas fa-gem"></i>
-                <span>玉缘世家翡翠</span>
-            </div>
-            <div class="theme-toggle">
-                <label class="theme-switch">
-                    <input type="checkbox" id="theme-toggle">
-                    <span class="slider">
+<div class="container">
+    <!-- 顶部栏 -->
+    <div class="top-bar">
+        <div class="logo">
+            <i class="fas fa-gem"></i>
+            <span>Tomde.cloud翡翠网站模板</span>
+        </div>
+        <div class="theme-toggle">
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider">
                         <i class="fas fa-sun"></i>
                         <i class="fas fa-moon"></i>
                     </span>
-                </label>
-            </div>
+            </label>
         </div>
-
-        <!-- 主横幅 -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>传承东方之美，典藏翡翠臻品</h1>
-                <p>每一件翡翠都是大自然的馈赠，凝聚千年时光的精华</p>
-                <a href="#" class="btn">探索珍藏系列</a>
-            </div>
-        </section>
-
-        <!-- 特色区域 -->
-        <section class="features">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-certificate"></i>
-                </div>
-                <h3>权威认证</h3>
-                <p>所有翡翠均附带国际权威鉴定证书，确保真品品质</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <h3>匠心工艺</h3>
-                <p>传承百年工艺，由大师级工匠精心雕琢，呈现翡翠天然之美</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-gift"></i>
-                </div>
-                <h3>尊享定制</h3>
-                <p>提供私人定制服务，打造专属您的传世翡翠珍品</p>
-            </div>
-        </section>
-
-        <!-- 产品展示 -->
-        <section class="products">
-            <h2 class="section-title">典藏臻品</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-img"
-                         style="background: url('https://cdn.jsdelivr.net/gh/tomdehub/resources/img/site/2025-08/04-12-05_1755288725126_1.jpg') center/cover;"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">帝王绿翡翠手镯</h3>
-                        <p>冰种帝王绿，水头十足，完美无瑕</p>
-                        <div class="product-price">¥ 168,000</div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img"
-                         style="background: url('https://cdn.jsdelivr.net/gh/tomdehub/resources/img/site/2025-08/04-12-05_1755288725127_2.jpg') center/cover;"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">紫罗兰翡翠吊坠</h3>
-                        <p>天然紫罗兰色，雕工精湛，灵气十足</p>
-                        <div class="product-price">¥ 86,000</div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img"
-                         style="background: url('https://cdn.jsdelivr.net/gh/tomdehub/resources/img/site/2025-08/04-12-05_1755288725129_3.jpg') center/cover;"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">冰种翡翠观音</h3>
-                        <p>高冰种水，通透无瑕，大师精工雕刻</p>
-                        <div class="product-price">¥ 128,000</div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img"
-                         style="background: url('https://cdn.jsdelivr.net/gh/tomdehub/resources/img/site/2025-08/04-12-05_1755288725130_4.jpg') center/cover;"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">春带彩翡翠戒指</h3>
-                        <p>紫绿双色交融，18K金镶嵌，典雅大气</p>
-                        <div class="product-price">¥ 56,000</div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img"
-                         style="background: url('https://cdn.jsdelivr.net/gh/tomdehub/resources/img/site/2025-08/04-12-05_1755288725130_4.jpg') center/cover;"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">春带彩翡翠戒指</h3>
-                        <p>紫绿双色交融，18K金镶嵌，典雅大气</p>
-                        <div class="product-price">¥ 56,000</div>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-img"
-                         style="background: url('https://cdn.jsdelivr.net/gh/tomdehub/resources/img/site/2025-08/04-12-05_1755288725130_4.jpg') center/cover;"></div>
-                    <div class="product-info">
-                        <h3 class="product-name">春带彩翡翠戒指</h3>
-                        <p>紫绿双色交融，18K金镶嵌，典雅大气</p>
-                        <div class="product-price">¥ 56,000</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 关于我们 -->
-        <section class="about">
-            <div class="about-image"></div>
-            <div class="about-content">
-                <h2>关于玉缘世家翡翠</h2>
-                <p>玉缘世家翡翠创立于1998年，秉承"传承翡翠文化，弘扬东方美学"的理念，专注于高端翡翠的收藏与设计。我们拥有缅甸翡翠矿场直供渠道，确保每一件翡翠均为天然A货。</p>
-                <p>公司拥有国家级玉雕大师团队，将传统工艺与现代审美完美结合，打造出兼具收藏价值与艺术美感的翡翠珍品。二十余年来，我们已为数万翡翠爱好者提供了值得珍藏一生的珠宝。</p>
-                <p>每一件玉缘世家翡翠都经过严格筛选，从原石采购到成品制作，经历37道工序，确保品质卓越，传承永恒。</p>
-                <a href="#" class="btn">了解更多</a>
-            </div>
-        </section>
     </div>
 
-    <!-- 底部 -->
-    <footer class="footer">
-        <div class="container">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>广东省佛山市翡翠大道888号</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>400-8888-9999</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>feicui@tomde.cloud</span>
+    <!-- 主横幅 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>传承东方之美，典藏翡翠臻品</h1>
+            <p>每一件翡翠都是大自然的馈赠，凝聚千年时光的精华</p>
+            <a href="#" class="btn">探索珍藏系列</a>
+        </div>
+    </section>
+
+    <!-- 特色区域 -->
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-certificate"></i>
+            </div>
+            <h3>权威认证</h3>
+            <p>所有翡翠均附带国际权威鉴定证书，确保真品品质</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-handshake"></i>
+            </div>
+            <h3>匠心工艺</h3>
+            <p>传承百年工艺，由大师级工匠精心雕琢，呈现翡翠天然之美</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-gift"></i>
+            </div>
+            <h3>尊享定制</h3>
+            <p>提供私人定制服务，打造专属您的传世翡翠珍品</p>
+        </div>
+    </section>
+
+    <!-- 产品展示 -->
+    <section class="products">
+        <h2 class="section-title">典藏臻品</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img"
+                     style="background: url('https://cdn.jsdelivr.net/gh/tomdehub/resources/img/site/2025-08/04-12-05_1755288725126_1.jpg') center/cover;"></div>
+                <div class="product-info">
+                    <h3 class="product-name">帝王绿翡翠手镯</h3>
+                    <p>冰种帝王绿，水头十足，完美无瑕</p>
+                    <div class="product-price">¥ 168,000</div>
                 </div>
             </div>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-weixin"></i></a>
-                <a href="#"><i class="fab fa-weibo"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-                <a href="#"><i class="fab fa-bilibili"></i></a>
+            <div class="product-card">
+                <div class="product-img"
+                     style="background: url('https://cdn.jsdelivr.net/gh/tomdehub/resources/img/site/2025-08/04-12-05_1755288725127_2.jpg') center/cover;"></div>
+                <div class="product-info">
+                    <h3 class="product-name">紫罗兰翡翠吊坠</h3>
+                    <p>天然紫罗兰色，雕工精湛，灵气十足</p>
+                    <div class="product-price">¥ 86,000</div>
+                </div>
             </div>
-            <div class="copyright">
-                <p>&copy; <a target="_blank" href="https://www.tomde.cloud">本站由Tomde.cloud提供</a></p>
+            <div class="product-card">
+                <div class="product-img"
+                     style="background: url('https://cdn.jsdelivr.net/gh/tomdehub/resources/img/site/2025-08/04-12-05_1755288725129_3.jpg') center/cover;"></div>
+                <div class="product-info">
+                    <h3 class="product-name">冰种翡翠观音</h3>
+                    <p>高冰种水，通透无瑕，大师精工雕刻</p>
+                    <div class="product-price">¥ 128,000</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"
+                     style="background: url('https://cdn.jsdelivr.net/gh/tomdehub/resources/img/site/2025-08/04-12-05_1755288725130_4.jpg') center/cover;"></div>
+                <div class="product-info">
+                    <h3 class="product-name">春带彩翡翠戒指</h3>
+                    <p>紫绿双色交融，18K金镶嵌，典雅大气</p>
+                    <div class="product-price">¥ 56,000</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"
+                     style="background: url('https://cdn.jsdelivr.net/gh/tomdehub/resources/img/site/2025-08/04-12-05_1755288725130_4.jpg') center/cover;"></div>
+                <div class="product-info">
+                    <h3 class="product-name">春带彩翡翠戒指</h3>
+                    <p>紫绿双色交融，18K金镶嵌，典雅大气</p>
+                    <div class="product-price">¥ 56,000</div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"
+                     style="background: url('https://cdn.jsdelivr.net/gh/tomdehub/resources/img/site/2025-08/04-12-05_1755288725130_4.jpg') center/cover;"></div>
+                <div class="product-info">
+                    <h3 class="product-name">春带彩翡翠戒指</h3>
+                    <p>紫绿双色交融，18K金镶嵌，典雅大气</p>
+                    <div class="product-price">¥ 56,000</div>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <script>
-        // 暗黑模式切换
-        const themeToggle = document.getElementById('theme-toggle');
-        
-        // 检查本地存储或系统偏好
-        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        if (savedTheme === 'dark') {
+    <!-- 关于我们 -->
+    <section class="about">
+        <div class="about-image"></div>
+        <div class="about-content">
+            <h2>关于某某翡翠</h2>
+            <p>
+                某某翡翠创立于1998年，秉承"传承翡翠文化，弘扬东方美学"的理念，专注于高端翡翠的收藏与设计。我们拥有缅甸翡翠矿场直供渠道，确保每一件翡翠均为天然A货。</p>
+            <p>
+                公司拥有国家级玉雕大师团队，将传统工艺与现代审美完美结合，打造出兼具收藏价值与艺术美感的翡翠珍品。二十余年来，我们已为数万翡翠爱好者提供了值得珍藏一生的珠宝。</p>
+            <p>每一件某某翡翠都经过严格筛选，从原石采购到成品制作，经历37道工序，确保品质卓越，传承永恒。</p>
+            <a href="#" class="btn">了解更多</a>
+        </div>
+    </section>
+</div>
+
+<!-- 底部 -->
+<footer class="footer">
+    <div class="container footer-container">
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>广东省佛山市翡翠大道888号</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>400-8888-9999</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>feicui@tomde.cloud</span>
+            </div>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-weixin"></i></a>
+            <a href="#"><i class="fab fa-weibo"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-bilibili"></i></a>
+        </div>
+        <div class="copyright">
+            <p>&copy; <a target="_blank" href="https://www.tomde.cloud">本站由Tomde.cloud提供</a></p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 暗黑模式切换
+    const themeToggle = document.getElementById('theme-toggle');
+
+    // 检查本地存储或系统偏好
+    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeToggle.checked = true;
+    }
+
+    themeToggle.addEventListener('change', function () {
+        if (this.checked) {
             document.body.classList.add('dark-mode');
-            themeToggle.checked = true;
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
         }
-        
-        themeToggle.addEventListener('change', function() {
-            if (this.checked) {
-                document.body.classList.add('dark-mode');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                document.body.classList.remove('dark-mode');
-                localStorage.setItem('theme', 'light');
+    });
+
+    // 滚动动画
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.feature-card, .product-card, .about');
+
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+
+            if (elementPosition < screenPosition) {
+                element.style.opacity = 1;
+                element.style.transform = 'translateY(0)';
             }
         });
-        
-        // 滚动动画
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.feature-card, .product-card, .about');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = 1;
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        };
-        
-        // 设置初始状态
-        document.querySelectorAll('.feature-card, .product-card, .about').forEach(el => {
-            el.style.opacity = 0;
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
-        
-        // 监听滚动事件
-        window.addEventListener('scroll', animateOnScroll);
-        // 初始加载时也触发一次
-        window.addEventListener('load', animateOnScroll);
-    </script>
+    };
+
+    // 设置初始状态
+    document.querySelectorAll('.feature-card, .product-card, .about').forEach(el => {
+        el.style.opacity = 0;
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    });
+
+    // 监听滚动事件
+    window.addEventListener('scroll', animateOnScroll);
+    // 初始加载时也触发一次
+    window.addEventListener('load', animateOnScroll);
+</script>
 </body>
 </html>
