@@ -795,7 +795,13 @@
     const themeIcon = themeToggle.querySelector('i');
 
     // 检查用户系统偏好
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    // const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (!localStorage.getItem('theme')) {
+        document.body.classList.add('dark-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'dark');
+    }
 
     // 检查本地存储
     const currentTheme = localStorage.getItem('theme');
