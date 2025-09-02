@@ -18,6 +18,7 @@
             --transition: all 0.3s ease;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            --width: 1400px;
         }
 
         .dark-mode {
@@ -48,9 +49,8 @@
 
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: var(--width);
             margin: 0 auto;
-            padding: 0 20px;
         }
 
         /* 导航栏样式 */
@@ -123,12 +123,15 @@
 
         /* 英雄区域样式 */
         .hero {
-            padding: 150px 0 100px;
             text-align: center;
-            background: var(--gradient);
             color: white;
-            border-radius: 0 0 20px 20px;
             margin-top: 80px;
+        }
+
+        .hero-container {
+            padding: 150px 0 100px;
+            background: var(--gradient);
+            border-radius: 20px;
         }
 
         .hero h1 {
@@ -225,7 +228,7 @@
         /* 项目展示样式 */
         .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-bottom: 80px;
         }
@@ -239,7 +242,7 @@
         }
 
         .project-image {
-            height: 200px;
+            height: 250px;
             overflow: hidden;
         }
 
@@ -447,6 +450,7 @@
         <nav>
             <div class="logo">
                 <i class="fas fa-rocket"></i>
+                &nbsp;&nbsp;
                 <span>科技企业</span>
             </div>
             <ul class="nav-links">
@@ -470,7 +474,7 @@
 
 <!-- 大字区域 -->
 <section class="hero" id="home">
-    <div class="container">
+    <div class="container hero-container">
         <h1>创新科技，引领未来</h1>
         <p>我们致力于为企业提供最先进的科技解决方案，助力您的业务在数字时代脱颖而出</p>
         <a href="#contact" class="btn">联系我们</a>
@@ -636,8 +640,6 @@
                 <a href="#">网站开发</a>
                 <a href="#">移动应用</a>
                 <a href="#">数字营销</a>
-                <a href="#">UI/UX设计</a>
-                <a href="#">云计算</a>
             </div>
             <div class="footer-column">
                 <h3>联系我们</h3>
