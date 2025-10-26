@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安全支付</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* 头部样式 */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            background: white;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            width: 30px;
+            height: 30px;
+        }
+
+        .security-badge {
+            color: #52c41a;
+            font-size: 14px;
+        }
+
+        /* 主内容区 */
+        .main-content {
+            padding: 20px;
+        }
+
+        .order-section, .payment-section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .order-details {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .order-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .amount {
+            font-weight: bold;
+            color: #ff4d4f;
+            font-size: 18px;
+        }
+
+        /* 支付方式 */
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .payment-option input[type="radio"] {
+            display: none;
+        }
+
+        .payment-option label {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 2px solid #e8e8e8;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .payment-option label:hover {
+            border-color: #1890ff;
+        }
+
+        .payment-option input[type="radio"]:checked + label {
+            border-color: #1890ff;
+            background-color: #f0f8ff;
+        }
+
+        .payment-option img {
+            /*width: 30px;*/
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        /* 支付按钮 */
+        .action-section {
+            text-align: center;
+        }
+
+        .pay-button {
+            width: 100%;
+            padding: 15px;
+            background: #1890ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .pay-button:hover {
+            background: #40a9ff;
+        }
+
+        .pay-button:active {
+            transform: translateY(1px);
+        }
+
+        .security-notice {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* 底部信任标识 */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .trust-badges img {
+            height: 30px;
+        }
+
+        /* 响应式设计 */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 500px;
+                margin: 20px auto;
+                min-height: auto;
+                border-radius: 12px;
+                overflow: hidden;
+            }
+
+            .header {
+                padding: 20px;
+            }
+
+            .main-content {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .main-content {
+                padding: 15px;
+            }
+
+            .payment-option label {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <div class="brand">
+            <!--<img src="logo.png" alt="品牌logo" class="logo">-->
+            <span>您的品牌名称</span>
+        </div>
+        <div class="security-badge">
+            <span>🔒 安全支付</span>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- 订单信息 -->
+        <section class="order-section">
+            <h2>订单信息</h2>
+            <div class="order-details">
+                <div class="order-item">
+                    <span>商品名称:</span>
+                    <span>高级会员套餐</span>
+                </div>
+                <div class="order-item">
+                    <span>订单金额:</span>
+                    <span class="amount">¥199.00</span>
+                </div>
+                <div class="order-item">
+                    <span>订单号:</span>
+                    <span>DD202507210001</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 支付方式选择 -->
+        <section class="payment-section">
+            <h2>选择支付方式</h2>
+            <div class="payment-methods">
+                <div class="payment-option" data-method="alipay">
+                    <input type="radio" id="alipay" name="payment" checked>
+                    <label for="alipay">
+                        <img src="alipay-logo.png" alt="支付宝">
+                        <span>支付宝</span>
+                    </label>
+                </div>
+                <div class="payment-option" data-method="wechat">
+                    <input type="radio" id="wechat" name="payment">
+                    <label for="wechat">
+                        <img src="wechat-pay-logo.png" alt="微信支付">
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- 支付按钮 -->
+        <section class="action-section">
+            <button id="pay-button" class="pay-button">确认支付 ¥199.00</button>
+            <p class="security-notice">🔒 您的支付信息已加密，安全处理</p>
+        </section>
+    </main>
+
+    <!-- 信任标识 -->
+    <footer class="footer">
+        <div class="trust-badges">
+            <!--<img src="https-icon.png" alt="HTTPS安全">-->
+            <!--<img src="verification-icon.png" alt="安全认证">-->
+        </div>
+    </footer>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const payButton = document.getElementById('pay-button');
+        const paymentOptions = document.querySelectorAll('.payment-option');
+        let selectedMethod = 'alipay';
+
+        // 支付方式选择
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const method = this.dataset.method;
+                selectedMethod = method;
+
+                // 更新按钮文字
+                updatePayButtonText(method);
+            });
+        });
+
+        function updatePayButtonText(method) {
+            const amount = '¥199.00';
+            payButton.textContent = `确认支付 ${amount}`;
+        }
+
+        // 支付按钮点击事件
+        payButton.addEventListener('click', function() {
+            // 防止重复提交
+            payButton.disabled = true;
+            payButton.textContent = '支付处理中...';
+
+            // 根据选择的支付方式调用不同的支付接口
+            initiatePayment(selectedMethod);
+        });
+
+        function initiatePayment(method) {
+            // 在实际应用中，这里应该调用后端接口获取支付参数
+            // 以下是模拟代码
+
+            const orderInfo = {
+                orderNo: 'DD202507210001',
+                amount: '199.00',
+                product: '高级会员套餐'
+            };
+
+            if (method === 'alipay') {
+                // 调用支付宝支付
+                callAlipay(orderInfo);
+            } else if (method === 'wechat') {
+                // 调用微信支付
+                callWechatPay(orderInfo);
+            }
+        }
+
+        function callAlipay(orderInfo) {
+            // 模拟支付宝支付调用
+            // 实际开发中需要从后端获取支付参数
+            console.log('调用支付宝支付:', orderInfo);
+
+            // 示例：在实际项目中可能是这样的
+            // AlipayJSBridge.call("tradePay", {
+            //     tradeNO: orderInfo.orderNo
+            // }, function (data) {
+            //     if (data.resultCode === "9000") {
+            //         // 支付成功
+            //         alert('支付成功！');
+            //     }
+            // });
+
+            // 模拟支付结果
+            setTimeout(() => {
+                alert('支付宝支付成功！');
+                resetPayButton();
+            }, 2000);
+        }
+
+        function callWechatPay(orderInfo) {
+            // 模拟微信支付调用
+            console.log('调用微信支付:', orderInfo);
+
+            // 示例：在实际项目中可能是这样的
+            // WeixinJSBridge.invoke('getBrandWCPayRequest', {
+            //     "appId": "wx2421b1c4370ec43b",
+            //     "timeStamp": "1395712654",
+            //     "nonceStr": "e61463f8efa94090b1f366cccfbbb444",
+            //     "package": "prepay_id=up_wx21201855730335ac86f8c43d1889123400",
+            //     "signType": "MD5",
+            //     "paySign": "70EA570631E4BB79628FBCA90534C63FF7FADD89"
+            // }, function(res) {
+            //     if (res.err_msg == "get_brand_wcpay_request:ok") {
+            //         // 支付成功
+            //     }
+            // });
+
+            // 模拟支付结果
+            setTimeout(() => {
+                alert('微信支付成功！');
+                resetPayButton();
+            }, 2000);
+        }
+
+        function resetPayButton() {
+            payButton.disabled = false;
+            payButton.textContent = `确认支付 ¥199.00`;
+        }
+    });
+</script>
+</body>
+</html>
